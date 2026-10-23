@@ -19,15 +19,14 @@ Rate card management was the main concern, but the same lack of visibility appli
 
 ### Email ingestion
 
-- The rate card inbox is an alias, connected to my main inbox which filters all rate card related emails to a dedicated folder. The folder is read through Microsoft's Graph API every 5 seconds.
+- The rate card inbox is an alias, connected to my main inbox which filters all rate card related emails to a dedicated folder. The folder is read via Microsoft's Graph API every 5 seconds.
 - Supplier names on the form are matched to a supplier list, so typos and variants still file under the right supplier.
 - Each file is checked to make sure it opens. Password-protected, scanned or broken files are rejected.
 - Accepted new cards go live instantly
 
 ### Storage Setup
 
-- Everything sits in its own section of the existing Cost Database (MySQL), separate from the supplier data already there.
-- Rate card files are stored inside the database itself, not on a shared drive, along with any extra files sent with them (contracts, cover letters).
-- Every action on a card is logged: who sent, confirmed, edited or downloaded it, and when.
+- Everything sits in its own section of the existing Cost Database (MySQL). This includes all files sent with the rate card (contracts, cover letters etc.)
+- Every action on a card is logged: Who sent it, confirmed, edited or downloaded it, and when.
 - Nothing is ever deleted. Wrong cards are withdrawn and can be restored.
 - Staff get read-only access. Only the automation or myself can add or change cards.
